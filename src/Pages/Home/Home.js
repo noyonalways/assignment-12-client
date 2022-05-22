@@ -1,9 +1,12 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
+import HomeBanner from './HomeBanner/HomeBanner';
 
 const Home = () => {
     return (
         <div>
-            <h2 className="text-2xl text-green-400 text-center">Hello world from Home</h2>
+            <HomeBanner/>
+            <Footer/>
         </div>
     );
 };

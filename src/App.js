@@ -5,6 +5,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './Shared/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+// Import Swiper styles
+import 'swiper/css';
+import "swiper/css/bundle";
+
+
 
 function App() {
   return (
@@ -13,7 +21,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='blogs' element={<Blogs/>}/>
+        <Route path='my-portfolio' element={<MyPortfolio/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
     </div>
   );

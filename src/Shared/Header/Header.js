@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineUser } from 'react-icons/ai'
 
 const Header = () => {
     const menuLinks = <>
@@ -9,7 +10,7 @@ const Header = () => {
         <li><Link to='/dashboard'>Dashboard</Link></li>
     </>
     return (
-        <header>
+        <header className='sticky top-0'>
             <div className="container mx-auto">
                 <div class="navbar bg-base-100">
                     <div class="navbar-start">
@@ -29,9 +30,9 @@ const Header = () => {
                         </ul>
                     </div>
                     <div class="navbar-end">
-                        <div class="w-10 h-10 overflow-hidden  rounded-full">
-                            <img className='w-full object-contain' src="https://api.lorem.space/image/face?hash=33791" alt='avarter' />
-                        </div>
+                        <Link to='/login' className=" btn btn-ghost btn-circle bg-gray-100">
+                            <AiOutlineUser className='text-lg' />
+                        </Link>
                     </div>
                 </div>
             </div>
