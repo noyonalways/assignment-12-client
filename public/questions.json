@@ -13,7 +13,7 @@
     },
     {
         "question": "Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts?",
-        "answer": ""
+        "answer": "A Hook is a special function that lets you “hook into” React features. For example, useState is a Hook that lets you add React state to function components. If we write a function component and realize we need to add some state to it, previously you had to convert it to a class. Now we can use a Hook inside the existing function component. When we declare a state variable with useState, it returns a pair — an array with two items. The first item is the current value, and the second is a function that lets us update it. Using [0] and [1] to access them is a bit confusing because they have a specific meaning."
     },
     {
         "question": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
