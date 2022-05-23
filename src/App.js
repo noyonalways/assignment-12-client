@@ -21,10 +21,15 @@ import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import { HelmetProvider } from 'react-helmet-async';
-
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="App">
       <HelmetProvider>

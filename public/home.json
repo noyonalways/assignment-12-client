@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Mother Board",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/0Cn0nJ0/mothrbord.jpg"
+    },
+    {
+        "name": "Computer Ram",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/PMth5FK/ram.jpg"
+    },
+    {
+        "name": "Processor",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/0nDHCbk/cpu.jpg"
+    },
+    {
+        "name": "Mother SSD",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/F3F69jB/ssd.jpg"
+    },
+    {
+        "name": "Mother Lighting SSD",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/KjgkGPz/ssd-light.jpg"
+    },
+    {
+        "name": "RGB RAM",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "img": "https://i.ibb.co/RcrzhpL/light-ram.jpg"
+    }
+]
+
+
+
+
+
+
+
