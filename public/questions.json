@@ -1,0 +1,26 @@
+[
+    {
+        "question" : "How will you improve the performance of a React Application?",
+        "answer": "Optimizing application performance is key for developers who are mindful of keeping a user's experience positive to keep them on an app and engaged. Different ways we can start optimizing our application for better performance. Use React.Fragment to Avoid Adding Extra Nodes to the DOM. Another way of optimizing a React app is by making sure we bundle our app for production before deploying. By default, our app is in development mode, which means React will include helpful warnings. This can be very useful while we are developing, but it can make our app size large and responses slower than usual. Use React.Suspense and React.Lazy for Lazy Loading Components. Lazy loading is a great technique for optimizing and speeding up the render time of our app."
+    },
+    {
+        "question": "What are the different ways to manage a state in a React application?",
+        "answer": "React components have a built-in state object. The state is encapsulated data where we store assets that are persistent between component renderings. The state is just a fancy term for a JavaScript data structure. If a user changes state by interacting with your application, the UI may look completely different afterward, because it's represented by this new state rather than the old state. There are dozens of state management tools on GitHub (e.g., Redux, MobX, Akita, Recoil, and Zustand). These are functions that hook you into React state and features from function components. Hooks don't work inside classes and it allows you to use React features without writing a class. Hooks are backward-compatible, which means it doesn't keep any breaking changes. React provides some built-in Hooks like useState, UseEffect, useReducer, etc."
+    },
+    {
+        "question": "How does prototypical inheritance work?",
+        "answer": "JavaScript is a prototype-based, Object-Oriented programming language. After the ES6 updates, JavaScript allowed for “prototypal inheritance”, meaning that objects and methods can be shared, extended, and copied. Sharing amid objects makes for the easy inheritance of structure (data fields), behavior (functions/methods), and state (data values). Simply put, prototypical inheritance refers to the ability to access object properties from another object. We use a JavaScript prototype to add new properties and methods to an existing object constructor. We can then essentially tell our JS code to inherit properties from a prototype."
+    },
+    {
+        "question": "Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts?",
+        "answer": ""
+    },
+    {
+        "question": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
+        "answer": "I am fetching data from the database through JSON. When I want to search for a product then I will filter products using a query to the heading and when I click on the search button. Then It will filter all the data and return to me the matching name products."
+    },
+    {
+        "question": "What is a unit test? Why should write unit tests?",
+        "answer": "Unit testing involves testing individual components of the software program or application. The main purpose behind this is to check that all the individual parts are working as intended. A unit is known as the smallest possible component of software that can be tested. Generally, it has a few inputs and a single output. The main objective of unit testing is to ensure that each individual part is working well and as it's supposed to work. The entire system will only be able to work well if the individual parts are working well. Unit testing is performed by the software developers themselves. Sometimes, independent software testers also perform these tests. Unit testing allows software developers to actually think through the design of the software and what has to be done before they write the code. This can help them to stay focused and can also help them to create much better designs. Testing a code early on can help to define what that piece of code is really responsible for."
+    }
+]

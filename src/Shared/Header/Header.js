@@ -31,7 +31,7 @@ const Header = () => {
 
 
     return (
-        <header className='sticky z-30 top-0 w-full bg-base-100'>
+        <header className='sticky z-30 top-0 w-full bg-base-100 shadow-sm'>
             <div className="container mx-auto">
                 <div className="navbar ">
                     <div className="navbar-start">
