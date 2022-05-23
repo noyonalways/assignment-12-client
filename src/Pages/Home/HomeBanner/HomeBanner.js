@@ -6,23 +6,33 @@ import { Pagination } from "swiper";
 import SingleSlide from './SingleSlide/SingleSlide';
 import './HomeBanner.css'
 import axios from 'axios';
+import LoadingCircle from '../../../Components/LoadingCircle/LoadingCircle';
 
 
 const HomeBanner = () => {
     const [banners, setBanners] = useState([]);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get('home.json');
-            setBanners(data);
+            setLoading(true);
+            const { data } = await axios.get('http://localhost:5000/home-slider');
+            setBanners(data.data);
+            setLoading(false);
         })();
-    }, [])
+    }, []);
+
+
 
     return (
-        <Swiper  pagination={{ dynamicBullets: true, grabCursor: true, }} modules={[Pagination]} className="mySwiper">
+        <div>
             {
-                banners.map((item, index) => <SwiperSlide key={index}> <SingleSlide item={item} /></SwiperSlide>)
+                loading ? <div className='py-5 h-screen flex items-center'><LoadingCircle /></div> : <Swiper pagination={{ dynamicBullets: true, grabCursor: true, }} modules={[Pagination]} className="mySwiper">
+                    {
+                        banners.map((item) => <SwiperSlide key={item._id}> <SingleSlide item={item} /></SwiperSlide>)
+                    }
+                </Swiper>
             }
-        </Swiper>
+        </div>
     );
 };
 

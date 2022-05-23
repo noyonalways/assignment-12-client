@@ -1,32 +1,32 @@
 [
     {
         "name": "Mother Board",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "description": "The ASUS PRIME H670-PLUS D4 Comprehensive Controls Form The Foundation Of The ASUS Prime Series. The Prime H670 Motherboard Packs Flexible Tools To Tune Every Aspect Of Your System, Enabling Performance Tweaks To Perfectly Match The Way You Work To Maximize Productivity.",
         "img": "https://i.ibb.co/0Cn0nJ0/mothrbord.jpg"
     },
     {
         "name": "Computer Ram",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "description": "Desktop RAM stands for Desktop Random Accessory Memory. Desktop RAM is essentially a device short term memory. It’s an important part of computer devices which store data and information. RAM memory is measured in gigabyte. RAM is significantly faster than a hard disk twenty to a hundred times. Because of its speed, ram is used to process information immediately.",
         "img": "https://i.ibb.co/PMth5FK/ram.jpg"
     },
     {
         "name": "Processor",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "description": "CPU Stands for the central processing unit. It is also called a central main processor, or simply just processor. It is essentially an electronic circuit that acts as the brain of the system. The CPU drives other components of the system to perform the commands of the user. Processors are available in computers, phones, TVs, and other smart electronic devices",
         "img": "https://i.ibb.co/0nDHCbk/cpu.jpg"
     },
     {
-        "name": "Mother SSD",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "name": "Super SSD",
+        "description": "SSDs are faster, more durable, more compact, quieter, and consume less energy. HDDs are more affordable and may offer easier data recovery in the event of damage.",
         "img": "https://i.ibb.co/F3F69jB/ssd.jpg"
     },
     {
-        "name": "Mother Lighting SSD",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "name": "Super Lighting SSD",
+        "description": "The SSD220Q delivers greater performance and reliability. This new Transcend SSD220Q SSD Featuring with QLC NAND Flash, density per cell boosts 33%. More storage capacity is unleashed for more data. This 2TB SSD is taking full advantage of the SATA III 6 Gb/s interface and built-in SLC caching technology, The Transcend's SSD220Q achieves exceptional transfer speeds of up to 550 MB/s read and 500 MB/s write. ",
         "img": "https://i.ibb.co/KjgkGPz/ssd-light.jpg"
     },
     {
         "name": "RGB RAM",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, iusto molestias ipsum voluptate est molestiae.",
+        "description": "TwinMos 8GB 2666MHz RGB DDR4 Desktop RAM with a data transfer speed of 36,000 MB/s operating voltage of 1.2 for power efficiency fully compliant with JEDEC standards and is guaranteed to be 100% compatible with all major platforms on the market. available up to 8GB temporary storage. ",
         "img": "https://i.ibb.co/RcrzhpL/light-ram.jpg"
     }
 ]

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { AiOutlineEye } from 'react-icons/ai'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import auth from '../../Firebase/Firebase.init';
 import SocilalLogin from '../../Shared/SocialLogin/SocilalLogin';
@@ -12,25 +13,28 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-
-
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if(user){
+            toast.success('Successfully login', { toastId: 'login' })
+            navigate(from, { replace: true });
+        }
+    },[user, from, navigate]);
 
     const onSubmit = async data => {
         await signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
 
-    if (user) {
-        console.log(user);
-    }
+    
 
     return (
         <section>
-            <div className="flex min-h-screen overflow-hidden px-4 md:px-0">
-                <div className="flex flex-col justify-center flex-1  px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 border md:border-none border-gray-100 rounded shadow lg:shadow-none">
+            <div className="flex min-h-screen overflow-hidden  md:py-0 md:px-0">
+                <div className="flex flex-col justify-center flex-1  px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                     {loading ? <LoadingRipple /> : <div className="w-full max-w-xl mx-auto lg:w-96 ">
                         <div>
                             <a href="./index.html" className="text-blue-600 text-medium">Tech Parts</a>
@@ -81,9 +85,9 @@ const Login = () => {
                                                 {errors.password?.type === 'required' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                                 {errors.password?.type === 'minLength' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                             </div>
-                                            <span className='absolute right-2 translate-y-1/2 top-2' onClick={() => setShowPassword(!showPassword)}>
+                                            <span className='absolute right-2 translate-y-1/2 top-2 text-xl text-gray-400' onClick={() => setShowPassword(!showPassword)}>
                                                 {
-                                                    showPassword ? <AiOutlineEye className=' text-lg text-gray-400' /> : <AiOutlineEyeInvisible className=' text-lg text-gray-400' />
+                                                    showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />
                                                 }
                                             </span>
                                         </div>

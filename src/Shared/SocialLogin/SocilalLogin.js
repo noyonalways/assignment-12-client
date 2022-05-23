@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/Firebase.init';
 import { FcGoogle } from 'react-icons/fc';
@@ -15,9 +15,12 @@ const SocilalLogin = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    if (userByFb || userByGoogle) {
-        console.log(userByFb || userByGoogle);
-    }
+    useEffect(() => {
+        if(userByGoogle || userByFb){
+            toast.success('Successfully login', { toastId: 'SocilalLogin' })
+            navigate(from, { replace: true });
+        }
+    },[userByFb,userByGoogle, from, navigate]);
 
     if (errorByGoogle || errorByFb) {
         if (errorByGoogle?.message.includes('auth/popup-closed-by-user') || errorByFb?.message.includes('auth/popup-closed-by-user')) {

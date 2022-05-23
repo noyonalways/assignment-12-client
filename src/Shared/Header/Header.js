@@ -21,7 +21,9 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/my-portfolio'>My Portfolio</Link></li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
         {
             user && <li ><span onClick={logOut} className='bg-red-400 text-white gap-2 lg:ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
         }

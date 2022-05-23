@@ -24,6 +24,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import RequireAuth from './Shared/RequireAuth/RequireAuth';
 
 function App() {
   useEffect(() => {
@@ -39,7 +40,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='blogs' element={<Blogs />} />
           <Route path='my-portfolio' element={<MyPortfolio />} />
-          <Route path='dashboard' element={<Dashboard />}>
+          <Route path='dashboard' element={<RequireAuth>
+            <Dashboard />
+          </RequireAuth>}>
             <Route index element={<MyOrders />} />
             <Route path='add-review' element={<AddReview />} />
             <Route path='my-profile' element={<MyProfile />} />
