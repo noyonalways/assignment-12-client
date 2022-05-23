@@ -20,7 +20,7 @@ const HomeBanner = () => {
     return (
         <Swiper  pagination={{ dynamicBullets: true, grabCursor: true, }} modules={[Pagination]} className="mySwiper">
             {
-                banners.map(item => <SwiperSlide > <SingleSlide item={item} /></SwiperSlide>)
+                banners.map((item, index) => <SwiperSlide key={index}> <SingleSlide item={item} /></SwiperSlide>)
             }
         </Swiper>
     );

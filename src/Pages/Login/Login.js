@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { AiOutlineEye } from 'react-icons/ai'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import auth from '../../Firebase/Firebase.init';
 import SocilalLogin from '../../Shared/SocialLogin/SocilalLogin';
 
@@ -11,7 +12,7 @@ const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-    
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -30,7 +31,7 @@ const Login = () => {
         <section>
             <div className="flex min-h-screen overflow-hidden px-4 md:px-0">
                 <div className="flex flex-col justify-center flex-1  px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 border md:border-none border-gray-100 rounded shadow lg:shadow-none">
-                    <div className="w-full max-w-xl mx-auto lg:w-96 ">
+                    {loading ? <LoadingRipple /> : <div className="w-full max-w-xl mx-auto lg:w-96 ">
                         <div>
                             <a href="./index.html" className="text-blue-600 text-medium">Tech Parts</a>
                             <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">Login</h2>
@@ -90,16 +91,20 @@ const Login = () => {
 
 
                                     <div>
-                                        <button type="submit" className="btn bnt-primary w-full">Sign in</button>
+                                        <button type="submit" className="btn bnt-primary w-full">Login</button>
                                     </div>
-                                    <div className='text-center'>
-                                        <p>Don't have an account yet? <Link className='text-blue-600 hover:text-blue-400' to='/signup' >SignUp</Link></p>
-                                    </div>
+
                                 </form>
+                                <div className='text-center mt-2'>
+                                    <p>Don't have an account yet? <Link className='text-blue-600 hover:text-blue-400' to='/signup' >SignUp</Link></p>
+                                </div>
+                                {
+                                    error && <p className="bg-red-100 mt-2 p-2 text-sm text-center text-red-500 rounded">{(error.message.includes('auth/wrong-password') ? "Wrong Password" : '' || error.message.includes('auth/user-not-found') ? 'User not found' : '')}</p>
+                                }
                                 <SocilalLogin />
                             </div>
                         </div>
-                    </div>
+                    </div>}
                 </div>
                 <div className="relative flex-1 hidden w-0 overflow-hidden lg:block">
                     <img className="absolute inset-0 object-cover w-full h-full" src="https://i.ibb.co/hLBkRYP/login-bg-min.jpg" alt="" />

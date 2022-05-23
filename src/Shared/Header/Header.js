@@ -23,13 +23,13 @@ const Header = () => {
         <li><Link to='/my-portfolio'>My Portfolio</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         {
-            user && <li ><span onClick={logOut} className='bg-red-400 text-white gap-2 ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
+            user && <li ><span onClick={logOut} className='bg-red-400 text-white gap-2 lg:ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
         }
     </>;
 
 
     return (
-        <header className='sticky top-0 z-[99999] w-full bg-base-100'>
+        <header className='sticky z-30 top-0 w-full bg-base-100'>
             <div className="container mx-auto">
                 <div className="navbar ">
                     <div className="navbar-start">
@@ -50,7 +50,7 @@ const Header = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user ? <div className='space-x-2'>
+                            user ? <div className='space-x-2 flex items-center'>
                                         <button className="btn ml-2 btn-ghost btn-circle bg-primary text-white text-lg">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
                                             user.email.substring(0, 1).toUpperCase()
                                         }</button>
@@ -73,3 +73,4 @@ const Header = () => {
 };
 
 export default Header;
+
