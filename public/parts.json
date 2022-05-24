@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Mother Board",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/x570s-ud-01-500x500-1.jpg",
+        "price": 120,
+        "availableQuantity": 90,
+        "minQunatity": 10,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    },
+    {
+        "name": "RAM",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/z-one_1_1_1-e1633291236837.jpg",
+        "price": 70,
+        "availableQuantity": 200,
+        "minQunatity": 15,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    },   
+    {
+        "name": "Processor",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/ryzen-3-5300g-500x500-1.jpg",
+        "price": 120,
+        "availableQuantity": 300,
+        "minQunatity": 10,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    },
+    {
+        "name": "SSD",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/m-2-to-usb-4-500x500-1-1.jpg",
+        "price": 65,
+        "availableQuantity": 200,
+        "minQunatity": 10,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    },
+    {
+        "name": "Casing",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/a363bk-1-500x500-1.jpg",
+        "price": 50,
+        "availableQuantity": 150,
+        "minQunatity": 10,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    },
+    {
+        "name": "Power Supply",
+        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/p850w-1.jpg",
+        "price": 110,
+        "availableQuantity": 80,
+        "minQunatity": 5,
+        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "sold": 0
+    }
+
+]
