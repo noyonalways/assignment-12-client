@@ -115,7 +115,7 @@ const SignUp = () => {
 
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center">
-                                                <input onChange={() => setTerms(!terms)} id="terms" name="terms" type="checkbox" className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black" />
+                                                <input onChange={() => setTerms(!terms)} id="terms" name="terms" type="checkbox" className="checkbox w-4 h-4 text-black border-gray-300 rounded focus:ring-black" />
                                                 <label htmlFor="terms" className={`block ml-2 text-sm  ${terms ? 'text-neutral-600' : 'text-red-500'}`}> Terms and conditions </label>
                                             </div>
                                         </div>

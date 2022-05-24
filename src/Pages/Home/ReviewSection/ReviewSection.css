@@ -1,0 +1,13 @@
+.rewiewSwiper .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 1rem;
+}
+
+.rewiewSwiper .swiper-slide {
+    padding: 0;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+}
+
