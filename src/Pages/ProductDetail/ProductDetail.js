@@ -168,7 +168,7 @@ const ProductDetail = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     {
-                                        parseInt(product?.availableQuantity) > 0 ? <button  className="btn btn-primary">Place order</button> : <button disabled className="btn btn-error ">Stock out</button>
+                                        parseInt(product?.availableQuantity) > 0 ? <button  className="btn btn-secondary text-white">Place order</button> : <button disabled className="btn btn-error ">Stock out</button>
                                     }
                                     
                                 </div>

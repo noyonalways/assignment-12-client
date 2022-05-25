@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
                     <p className='text-lg'><span className="font-semibold">Sold:</span> {sold}</p>
                 </div>
                 <p className="text-base text-gray-500">{productDescription?.length > 90 ? productDescription.slice(0, 90) + '...' : productDescription}</p>
-                <Link to={`/product/${_id}`}  className="btn btn-primary">Purchase</Link>
+                <Link to={`/product/${_id}`}  className="btn btn-secondary text-white">Purchase</Link>
             </div>
         </div>
     );

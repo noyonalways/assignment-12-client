@@ -25,7 +25,7 @@ const Header = () => {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
         {
-            user && <li ><span onClick={logOut} className='bg-red-400 text-white gap-2 lg:ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
+            user && <li ><span onClick={logOut} className='bg-red-500 text-white gap-2 lg:ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
         }
     </>;
 
@@ -53,7 +53,7 @@ const Header = () => {
                     <div className="navbar-end">
                         {
                             user ? <div className='space-x-2 flex items-center'>
-                                        <button className="btn ml-2 btn-ghost bg-secondary btn-circle ring-2 text-white text-lg">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
+                                        <button className="btn ml-2 btn-ghost bg-secondary btn-circle ring-2 ring-secondary text-white text-lg">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
                                             user.email.substring(0, 1).toUpperCase()
                                         }</button>
                                 {
