@@ -13,7 +13,7 @@ const ReviewSection = () => {
     const reviews = data?.data.data;
 
     return (
-        <section className='py-8'>
+        <section id='reviews' className='py-8'>
             <div className='text-center py-3 mb-10'>
                 <p className='text-lg'>Reviews</p>
                 <h2 className="text-3xl  font-bold">What our client's says</h2>
