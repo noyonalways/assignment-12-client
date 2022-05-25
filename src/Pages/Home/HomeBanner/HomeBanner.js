@@ -15,7 +15,7 @@ const HomeBanner = () => {
     useEffect(() => {
         (async () => {
             setLoading(true);
-            const { data } = await axios.get('http://localhost:5000/home-slider');
+            const { data } = await axios.get('https://glacial-temple-86041.herokuapp.com/home-slider');
             setBanners(data.data);
             setLoading(false);
         })();

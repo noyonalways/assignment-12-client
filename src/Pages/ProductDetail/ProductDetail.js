@@ -11,7 +11,7 @@ import { format } from 'date-fns';
 const ProductDetail = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
-    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axios.get(`http://localhost:5000/product/${id}`));
+    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axios.get(`https://glacial-temple-86041.herokuapp.com/product/${id}`));
     const product = data?.data;
     // const { name, img, availableQuantity, price, productDescription, sold, _id } = product;
     const [address, setAddress] = useState({value: '', error: ''});
@@ -79,7 +79,7 @@ const ProductDetail = () => {
                 quantity: newQuantity,
                 sold: newSoldQuantity
             }
-            const {data: result} = await axios.put(`http://localhost:5000/product/${id}`, updatedProduct);
+            const {data: result} = await axios.put(`https://glacial-temple-86041.herokuapp.com/product/${id}`, updatedProduct);
             console.log(result);
             refetch();
 
@@ -93,9 +93,11 @@ const ProductDetail = () => {
                 productQuantity: wantQuantity.value,
                 productId: product?._id,
                 productImg: product?.img,
+                productPrice: product?.price,
+                totalCost: (wantQuantity.value * parseInt(product?.price)).toFixed(2),
                 date: formatedDate
             }
-            const {data} = await axios.post('http://localhost:5000/order', orderProduct);
+            const {data} = await axios.post('https://glacial-temple-86041.herokuapp.com/order', orderProduct);
             if(data.success){
                 toast.success('Order placed successfully', {toastId: 'order'})
             }
@@ -155,7 +157,7 @@ const ProductDetail = () => {
                                     <label className="label">
                                         <span className="label-text">Phone</span>
                                     </label>
-                                    <input onBlur={(e) => handlePhone(e.target.value)} type="text" placeholder='Your conatact number' className={`input input-bordered ${phone.error && 'border-red-400'}`} />
+                                    <input onBlur={(e) => handlePhone(e.target.value)} type="tel"  placeholder='Your conatact number' className={`input input-bordered ${phone.error && 'border-red-400'}`} />
                                     {
                                         phone.error && <small className="text-red-400">{phone.error}</small>
                                     }

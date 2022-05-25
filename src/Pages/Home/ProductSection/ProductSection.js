@@ -6,7 +6,7 @@ import NoData from '../../../Components/NoData/NoData';
 import ProductCard from './ProductCard/ProductCard';
 
 const ProductSection = () => {
-    const { data, isLoading } = useQuery('products', async () => await axios.get('http://localhost:5000/product'));
+    const { data, isLoading } = useQuery('products', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/product'));
     const products = data?.data.data;
 
 

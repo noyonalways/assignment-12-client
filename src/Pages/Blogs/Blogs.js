@@ -12,7 +12,7 @@ const Blogs = () => {
     useEffect(() => {
         (async () => {
             setLoading(true)
-            const { data } = await axios.get('http://localhost:5000/question');
+            const { data } = await axios.get('https://glacial-temple-86041.herokuapp.com/question');
             setQuestions(data.data);
             setLoading(false);
         })();
