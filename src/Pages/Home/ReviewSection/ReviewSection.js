@@ -19,7 +19,7 @@ const ReviewSection = () => {
                 <h2 className="text-3xl  font-bold">What our client's says</h2>
             </div>
             {
-                isLoading ? <div className="h-screen flex items-center"><LoadingRipple /> </div> : <div className='container mx-auto'>
+                isLoading ? <div className="h-screen flex items-center"><LoadingRipple /> </div> : <div className='container mx-auto px-5 lg:px-0'>
                     <>
                         <Swiper
                             autoplay={true}

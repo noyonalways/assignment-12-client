@@ -10,7 +10,7 @@ const SingleSlide = ({ item }) => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold">{name}</h1>
                     <p className="mb-5">{description.length > 100 ? description.slice(0, 100) + '...': description}</p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <a href='#products' className="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>

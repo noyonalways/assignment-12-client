@@ -108,15 +108,16 @@ const ProductDetail = () => {
 
     return (
         <section className='py-5'>
-            <div className="container mx-auto lg:px-3">
+            <div className="container mx-auto lg:px-3 px-4">
                 {
-                    isLoading ? <div className="flex items-center justify-center h-screen"><LoadingRipple /> </div> : <div className="flex items-center lg:items-start  flex-col lg:flex-row justify-between ">
-                        <div className='max-w-2xl'>
+                    isLoading ? <div className="flex items-center justify-center h-screen"><LoadingRipple /> </div> : <div className="flex items-center lg:items-start  flex-col lg:flex-row justify-between space-y-6 lg:space-y-0">
+                        <div className='max-w-2xl '>
                             <figure className=' max-w-xs py-2 mx-auto'><img src={product?.img} alt="Shoes" /></figure>
                             <h2 className="text-2xl font-semibold">{product?.name}</h2>
                             <div className="space-y-0">
                                 <p className='text-lg font-semibold'>Price: ${product?.price} <small>(Per product)</small></p>
-                                <p className='text-lg '><span className="font-semibold">Quantity:</span> {product?.availableQuantity}</p>
+                                <p className='text-lg '><span className="font-semibold">
+                                    Available Quantity:</span> {product?.availableQuantity}</p>
                                 <p className='text-lg'><span className="font-semibold">Sold:</span> {product?.sold}</p>
                             </div>
                             <p className="text-base text-gray-500 ">{product?.productDescription}</p>
