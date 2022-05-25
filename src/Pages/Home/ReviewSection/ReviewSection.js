@@ -1,17 +1,16 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
-import {  Pagination } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
 import SingleReview from './SingleReview/SingleReview';
 import './ReviewSection.css'
+import NoData from '../../../Components/NoData/NoData';
 
 const ReviewSection = () => {
     const { data, isLoading } = useQuery('allReview', async () => await axios.get('http://localhost:5000/review'));
     const reviews = data?.data.data;
-
-    console.log(reviews);
 
     return (
         <section className='py-8'>
@@ -20,12 +19,12 @@ const ReviewSection = () => {
                 <h2 className="text-3xl  font-bold">What our client's says</h2>
             </div>
             {
-                isLoading ? <LoadingRipple /> : <div className='container mx-auto'>
+                isLoading ? <div className="h-screen flex items-center"><LoadingRipple /> </div> : <div className='container mx-auto'>
                     <>
                         <Swiper
-                        autoplay={true}
-                        
-                        slidesPerView={1}
+                            autoplay={true}
+
+                            slidesPerView={1}
                             spaceBetween={10}
                             pagination={{
                                 clickable: true,
@@ -34,7 +33,7 @@ const ReviewSection = () => {
                             className="rewiewSwiper"
                         >
                             {
-                                reviews.map(review => <SwiperSlide key={review._id} ><SingleReview review={review} /></SwiperSlide>)
+                                reviews?.length ? reviews?.map(review => <SwiperSlide key={review._id} ><SingleReview review={review} /></SwiperSlide>) : <div className='h-screen flex items-center justify-center'><NoData /></div>
                             }
                         </Swiper>
                     </>

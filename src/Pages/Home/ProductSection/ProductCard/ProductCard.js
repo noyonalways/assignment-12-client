@@ -1,15 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+    const { name, img, availableQuantity, price, productDescription, sold, _id } = product;
+
+    console.log(product);
     return (
-        <div class="card card-compact  bg-base-100 shadow-xl">
-            <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
+        <div className="card card-compact  bg-base-100 shadow-xl hover:scale-[1.02] duration-200">
+            <figure className=' max-w-xs py-2 mx-auto'><img src={img} alt="Shoes" /></figure>
+            <div className="card-body">
+                <h2 className="text-2xl font-semibold">{name}</h2>
+                <div className="space-y-0">
+                    <p className='text-lg font-semibold'>Price: ${price}</p>
+                    <p className='text-lg'><span className="font-semibold">Quantity:</span> {availableQuantity}</p>
+                    <p className='text-lg'><span className="font-semibold">Sold:</span> {sold}</p>
                 </div>
+                <p className="text-base text-gray-500">{productDescription?.length > 90 ? productDescription.slice(0, 90) + '...' : productDescription}</p>
+                <Link to={`/product/${_id}`}  className="btn btn-primary">Purchase</Link>
             </div>
         </div>
     );

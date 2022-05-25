@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
+import NoData from '../../../Components/NoData/NoData';
 import ProductCard from './ProductCard/ProductCard';
 
 const ProductSection = () => {
@@ -17,11 +18,9 @@ const ProductSection = () => {
             </div>
             <div className="container mx-auto lg:px-2">
                 {
-                    isLoading ? <div className="py-10"><LoadingRipple /></div> : <div className="grid lg:grid-cols-3 gap-8">
-                        {
-                            products.map(product => <ProductCard />)
-                        }
-                    </div>
+                    isLoading ? <div className="flex items-center justify-center h-screen"><LoadingRipple /> </div> : <>
+                        {products?.length ? <div className='grid lg:grid-cols-3 gap-12'>{products?.map(product => <ProductCard key={product._id} product={product} />)}</div> : <div className='h-screen flex items-center justify-center'><NoData /></div>}
+                    </>
                 }
             </div>
         </section>

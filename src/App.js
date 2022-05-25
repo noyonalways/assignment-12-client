@@ -25,6 +25,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import RequireAuth from './Shared/RequireAuth/RequireAuth';
+import ProductDetail from './Pages/ProductDetail/ProductDetail';
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='blogs' element={<Blogs />} />
           <Route path='my-portfolio' element={<MyPortfolio />} />
+          <Route path='/product/:id' element={<RequireAuth><ProductDetail/></RequireAuth>} />
           <Route path='dashboard' element={<RequireAuth>
             <Dashboard />
           </RequireAuth>}>
