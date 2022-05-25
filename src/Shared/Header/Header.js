@@ -53,7 +53,7 @@ const Header = () => {
                     <div className="navbar-end">
                         {
                             user ? <div className='space-x-2 flex items-center'>
-                                        <button className="btn ml-2 btn-ghost bg-secondary btn-circle ring-2 ring-secondary text-white text-lg">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
+                                        <button className="bg-secondary w-10 h-10 rounded-full ring-2 fing-secondary text-white ">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
                                             user.email.substring(0, 1).toUpperCase()
                                         }</button>
                                 {

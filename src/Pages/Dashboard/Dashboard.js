@@ -7,7 +7,7 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
             <PageTitle title={'Dashboard'}/>
             <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="drawer-content flex flex-col ">
                 {/* <!-- Page content here --> */}
                 <Outlet />
                 {/* <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
