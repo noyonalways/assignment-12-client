@@ -58,7 +58,7 @@ const Login = () => {
                                                     message: "Provide a valid email"
                                                 }
                                             })}
-                                                id="email" name="email" type="email" autoComplete="email" required="" placeholder="Your Email" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                                id="email" name="email" type="email" autoComplete="email" required="" placeholder="Your Email" className={`block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 ${errors.email && 'border-red-400'}`} />
                                             {errors.email?.type === 'required' && <small className='text-red-400 mt-1'>{errors.email.message}</small>}
                                             {errors.email?.type === 'pattern' && <small className='text-red-400 mt-1'>{errors.email.message}</small>}
                                         </div>
@@ -81,7 +81,7 @@ const Login = () => {
                                                         message: "Password be 6 character or longer"
                                                     }
                                                 })}
-                                                    id="password" name="password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" required="" placeholder="Your Password" className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                                    id="password" name="password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" required="" placeholder="Your Password" className={`block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 ${errors.password && 'border-red-400'}`} />
                                                 {errors.password?.type === 'required' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                                 {errors.password?.type === 'minLength' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                             </div>

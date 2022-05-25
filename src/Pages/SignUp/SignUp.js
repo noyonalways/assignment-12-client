@@ -63,7 +63,7 @@ const SignUp = () => {
                                                         message: "Name is required"
                                                     }
                                                 })}
-                                                    placeholder='Your Name' id="name" name="name" type="text" autoComplete="email" required="" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                                    placeholder='Your Name' id="name" name="name" type="text" autoComplete="email" required="" className={`block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 ${errors.name && 'border-red-400'}`} />
                                                 {errors.name?.type === 'required' && <small className='text-red-400 mt-1'>{errors.name.message}</small>}
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@ const SignUp = () => {
                                                         message: "Provide a valid email"
                                                     }
                                                 })}
-                                                    placeholder='Your Email' id="email" name="email" type="email" autoComplete="email" required="" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                                    placeholder='Your Email' id="email" name="email" type="email" autoComplete="email" required="" className={`block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 ${errors.email && 'border-red-400'}`} />
                                                 {errors.email?.type === 'required' && <small className='text-red-400 mt-1'>{errors.email.message}</small>}
                                                 {errors.email?.type === 'pattern' && <small className='text-red-400 mt-1'>{errors.email.message}</small>}
                                             </div>
@@ -101,7 +101,7 @@ const SignUp = () => {
                                                             message: "Password be 6 character or longer"
                                                         }
                                                     })}
-                                                        placeholder='Your Password' id="password" name="password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" required="" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                                        placeholder='Your Password' id="password" name="password" type={showPassword ? 'text' : 'password'} autoComplete="current-password" required="" className={`block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300 ${errors.password && 'border-red-400'}`} />
                                                     {errors.password?.type === 'required' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                                     {errors.password?.type === 'minLength' && <small className='text-red-400 mt-1'>{errors.password.message}</small>}
                                                 </div>
@@ -115,7 +115,7 @@ const SignUp = () => {
 
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center">
-                                                <input onChange={() => setTerms(!terms)} id="terms" name="terms" type="checkbox" className="checkbox w-4 h-4 text-black border-gray-300 rounded focus:ring-black" />
+                                                <input onChange={() => setTerms(!terms)} id="terms" name="terms" type="checkbox" className={`checkbox w-4 h-4 text-black border-gray-300 rounded focus:ring-black ${terms ? '' : 'border-red-400'}`} />
                                                 <label htmlFor="terms" className={`block ml-2 text-sm  ${terms ? 'text-neutral-600' : 'text-red-500'}`}> Terms and conditions </label>
                                             </div>
                                         </div>

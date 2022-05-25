@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
     const { name, img, availableQuantity, price, productDescription, sold, _id } = product;
 
-    console.log(product);
     return (
         <div className="card card-compact  bg-base-100 shadow-xl hover:scale-[1.02] duration-200">
             <figure className=' max-w-xs py-2 mx-auto'><img src={img} alt="Shoes" /></figure>

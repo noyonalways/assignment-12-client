@@ -3,54 +3,54 @@
         "name": "Mother Board",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/x570s-ud-01-500x500-1.jpg",
         "price": 120,
-        "availableQuantity": 90,
-        "minQunatity": 10,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 4500,
+        "minQunatity": 100,
+        "productDescription": "A motherboard is a printed circuit board or a PCB that creates the skeletal structure of a PC. It hosts components such as the Processor or CPU, graphics processing unit or GPU, Memory Module, or RAM, and storage. Motherboard Ensures communication between all these different components and contains some vital sub-systems such as I/O points, memory controllers, interface connectors, etc.",
         "sold": 0
     },
     {
         "name": "RAM",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/z-one_1_1_1-e1633291236837.jpg",
         "price": 70,
-        "availableQuantity": 200,
-        "minQunatity": 15,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 8000,
+        "minQunatity": 150,
+        "productDescription": "Designed for high-performance overclocking Each module is built with a pure aluminum heatspreader for faster heat dissipation and cooler operation; and the custom performance PCB helps manage heat and provides superior overclocking headroom. Each IC is individually screened for performance potential. Designed for great looks Available in multiple colors to match your motherboard, your components, or just your style. Performance and Compatibility Ramsta is optimized and compatibility tested for the latest Intel 100 and 200 Series motherboards and offers higher frequencies, greater bandwidth, and lower power consumption.",
         "sold": 0
     },   
     {
         "name": "Processor",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/ryzen-3-5300g-500x500-1.jpg",
         "price": 120,
-        "availableQuantity": 300,
-        "minQunatity": 10,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 4500,
+        "minQunatity": 100,
+        "productDescription": "CPU Stands for the central processing unit. It is also called a central main processor, or simply just processor. It is essentially an electronic circuit that acts as the brain of the system. The CPU drives other components of the system to perform the commands of the user. Processors are available in computers, phones, TVs, and other smart electronic devices. The CPU is connected to the PC via Motherboard. The form, design, and implementation of CPUs have changed over time, but their fundamental operation remains almost unchanged. Currently, the market has two main CPU Brands Intel and AMD.",
         "sold": 0
     },
     {
         "name": "SSD",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/m-2-to-usb-4-500x500-1-1.jpg",
         "price": 65,
-        "availableQuantity": 200,
-        "minQunatity": 10,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 7000,
+        "minQunatity": 100,
+        "productDescription": "The SSD220Q delivers greater performance and reliability. This new Transcend SSD220Q SSD Featuring with QLC NAND Flash, density per cell boosts 33%. More storage capacity is unleashed for more data. This 2TB SSD is taking full advantage of the SATA III 6 Gb/s interface and built-in SLC caching technology, The Transcend’s SSD220Q achieves exceptional transfer speeds of up to 550 MB/s read and 500 MB/s write. This SSD is also offers great terabytes written (TBW) values (up to 400 TBW) indicating the total amount of data. ",
         "sold": 0
     },
     {
         "name": "Casing",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/a363bk-1-500x500-1.jpg",
         "price": 50,
-        "availableQuantity": 150,
-        "minQunatity": 10,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 3500,
+        "minQunatity": 100,
+        "productDescription": "The front of the PC Casing has a power button and sometimes a reset button. Smaller LED lights also represent common, current power status, hard drive activity, and sometimes other internal processes. These buttons and lights connect directly to the motherboard, which is secured inside the Case.",
         "sold": 0
     },
     {
         "name": "Power Supply",
         "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/p850w-1.jpg",
         "price": 110,
-        "availableQuantity": 80,
-        "minQunatity": 5,
-        "productDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod molestiae ut labore nisi quidem necessitatibus omnis. Perferendis iste excepturi beatae.",
+        "availableQuantity": 6000,
+        "minQunatity": 100,
+        "productDescription": "Do not confuse a power supply with a power source. The source is the origin of incoming electricity. In most cases, the electricity source is an outlet, battery, or generator. The power supply works to convert the power from the source into the correct format and voltage. Because a variety of options exist, the specific power supply function depends on whether it needs to regulate energy or convert power. ",
         "sold": 0
     }
 
