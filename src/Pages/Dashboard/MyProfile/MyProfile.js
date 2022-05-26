@@ -1,4 +1,4 @@
-import autoprefixer from 'autoprefixer';
+
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import PageTitle from '../../../Components/PageTitle/PageTitle';
@@ -21,7 +21,7 @@ const MyProfile = () => {
                             <div className="flex flex-col lg:flex-row lg:space-x-6">
                                 <div className='space-y-3 text-center'>
                                     {
-                                        user.photoURL ? <img className='w-40 rounded-full mx-auto' src={user.photoURL} alt="" /> : <div className="text-8xl bg-secondary w-40 h-40 flex items-center justify-center rounded-full text-white font-semibold">{user.email.substring(0, 1).toUpperCase()}</div>
+                                        user.photoURL ? <img className='w-40 rounded-full mx-auto' src={user.photoURL} alt="" /> : <div className="text-8xl bg-primary w-40 h-40 flex items-center justify-center rounded-full text-white font-semibold">{user.email.substring(0, 1).toUpperCase()}</div>
                                     }
                                     <button className="btn-secondary btn text-white mx-auto inline-block">Edit Profile</button>
                                 </div>
