@@ -4,13 +4,18 @@ import { BsFacebook } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsTwitter } from 'react-icons/bs'
 import { BsInstagram } from 'react-icons/bs'
+import { BsLink45Deg } from 'react-icons/bs'
+import project1 from '../../Assets/projects/project-1.png';
+import project2 from '../../Assets/projects/project-2.png';
+import project3 from '../../Assets/projects/project-3.png';
+import './MyPortfoli.css'
 
 const MyPortfolio = () => {
     return (
         <div>
             <PageTitle title={'MyProfile'} />
             <div className="container mx-auto py-6">
-                <div className=' lg:w-[820px] mx-auto px-5 py-6'>
+                <div className=' lg:w-[860px] mx-auto px-5 py-6'>
                     <div className='flex space-x-12 items-center border-b pb-3'>
                         <img className='w-28 h-28 rounded-full ring-secondary ring' src="https://i.ibb.co/djfb3zf/Photo-Room-20220403-005759.png" alt="" />
                         <ul className='flex space-x-3 text-lg'>
@@ -65,7 +70,7 @@ const MyPortfolio = () => {
                         </div>
                     </div>
                     <div className='my-3'>
-                        <h3 className="text-2xl mb-3 font-semibold text-center bg-gray-50">Technologies that I know</h3>
+                        <h3 className="text-2xl mb-5 font-semibold text-center">Technologies that I know</h3>
                         <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-stretch mt-3 gap-1 justify-center'>
                             <img className='w-full h-[2.3rem] object-fill inline-block' src="https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465" alt="" />
                             <img className='w-full h-[2.3rem] object-fill inline-block' src="https://camo.githubusercontent.com/3a0f693cfa032ea4404e8e02d485599bd0d192282b921026e89d271aaa3d7565/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d3135373242363f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465" alt="" />
@@ -86,6 +91,38 @@ const MyPortfolio = () => {
                             <img className='w-full h-[2.3rem] object-fill  inline-block' src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white" alt="" />
                             <img className='w-full h-[2.3rem] object-fill  inline-block' src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="" />
                             <img className='w-full h-[2.3rem] object-fill  inline-block' src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="" />
+                        </div>
+                    </div>
+                    <div className='my-5'>
+                        <h2 className="text-2xl font-semibold text-center mb-6">Letest Works</h2>
+                        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3'>
+                            <div>
+                                <div className='border-2 border-secondary relative rounded single-project bg-gray-50 p-[5px]' >
+                                    <img src={project1} alt="" />
+                                    <div className="single-project-ovarly absolute duration-300 flex items-center justify-center w-full top-0 left-0 bg-secondary opacity-0 h-full">
+                                        <a href="https://smart-tech1.netlify.app/" rel="noreferrer" target='_blank'><BsLink45Deg className='text-5xl text-white' /></a>
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-semibold">Smart Tech</h3>
+                            </div>
+                            <div>
+                                <div className='border-2 border-secondary relative rounded single-project bg-gray-50 p-[5px]' >
+                                    <img src={project2} alt="" />
+                                    <div className="single-project-ovarly absolute duration-300 flex items-center justify-center w-full top-0 left-0 bg-secondary opacity-0 h-full">
+                                        <a href="https://pic-man.web.app/" rel="noreferrer" target='_blank'><BsLink45Deg className='text-5xl text-white' /></a>
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-semibold">Picman Photography</h3>
+                            </div>
+                            <div>
+                                <div className='border-2 border-secondary relative rounded single-project bg-gray-50 p-[5px]' >
+                                    <img src={project3} alt="" />
+                                    <div className="single-project-ovarly absolute duration-300 flex items-center justify-center w-full top-0 left-0 bg-secondary opacity-0 h-full">
+                                        <a href="https://arredo-warehouse.web.app/" rel="noreferrer" target='_blank'><BsLink45Deg className='text-5xl text-white' /></a>
+                                    </div>
+                                </div>
+                                <h3 className="text-lg font-semibold">Arredo Warehouse</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
