@@ -11,7 +11,7 @@ import { format } from 'date-fns';
 const ProductDetail = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
-    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axios.get(`https://glacial-temple-86041.herokuapp.com/product/${id}`));
+    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axios.get(`http://localhost:5000/product/${id}`));
     const product = data?.data;
     // const { name, img, availableQuantity, price, productDescription, sold, _id } = product;
     const [address, setAddress] = useState({value: '', error: ''});
@@ -79,7 +79,7 @@ const ProductDetail = () => {
                 quantity: newQuantity,
                 sold: newSoldQuantity
             }
-            const {data: result} = await axios.put(`https://glacial-temple-86041.herokuapp.com/product/${id}`, updatedProduct);
+            const {data: result} = await axios.put(`http://localhost:5000/product/${id}`, updatedProduct);
             console.log(result);
             refetch();
 
@@ -97,7 +97,7 @@ const ProductDetail = () => {
                 totalCost: (wantQuantity.value * parseInt(product?.price)).toFixed(2),
                 date: formatedDate
             }
-            const {data} = await axios.post('https://glacial-temple-86041.herokuapp.com/order', orderProduct);
+            const {data} = await axios.post('http://localhost:5000/order', orderProduct);
             if(data.success){
                 toast.success('Order placed successfully', {toastId: 'order'})
             }
@@ -124,12 +124,12 @@ const ProductDetail = () => {
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <form onSubmit={placeOrder} className="card-body">
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Name</span>
-                                    </label>
-                                    <input type="text" disabled value={user?.displayName} className="input input-bordered" />
-                                </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" disabled value={user?.displayName} className="input input-bordered" />
+                            </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>

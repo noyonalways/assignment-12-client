@@ -8,7 +8,7 @@ import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import { useQuery } from 'react-query';
 
 const Blogs = () => {
-    const { data, isLoading } = useQuery('questions', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/question'));
+    const { data, isLoading } = useQuery('questions', async () => await axios.get('http://localhost:5000/question'));
     const questions = data?.data?.data;
     return (
         <section >

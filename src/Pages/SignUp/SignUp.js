@@ -8,6 +8,7 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
 import { toast } from 'react-toastify';
 import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
+import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
     const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
@@ -18,13 +19,15 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    const [token] = useToken(user);
 
     useEffect(() => {
         if(user){
-            toast.success('Successfully SignUp', { toastId: 'signUp' });
-            navigate(from, { replace: true });
+            // toast.success('Successfully SignUp', { toastId: 'signUp' });
+            // navigate(from, { replace: true });
+            // console.log(token);
         }
-    },[user, from, navigate]);
+    },[user, from, navigate, token]);
 
 
     const onSubmit = async data => {

@@ -10,7 +10,7 @@ import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import { useQuery } from 'react-query';
 
 const MyPortfolio = () => {
-    const { data, isLoading } = useQuery('portfolio', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/portfolio'));
+    const { data, isLoading } = useQuery('portfolio', async () => await axios.get('http://localhost:5000/portfolio'));
     const portfolio = data?.data[0];
     const { name, profileImg, email, phone, age, presentAddress, permanentAddress, education, gpa, passingYear, instisutionName, projects, usedTechnologies } = data?.data[0] ? portfolio : {};
 

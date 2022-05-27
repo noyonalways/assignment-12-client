@@ -11,7 +11,7 @@ import { useQuery } from 'react-query';
 
 
 const HomeBanner = () => {
-    const { data, isLoading } = useQuery('banners', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/home-slider'));
+    const { data, isLoading } = useQuery('banners', async () => await axios.get('http://localhost:5000/home-slider'));
     const banners = data?.data?.data ? data.data.data : [];
 
 
