@@ -6,6 +6,7 @@ import SingleQuestion from './SingleQuestion/SingleQuestion';
 import Image from '../../Assets/Image/question.svg';
 import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import { useQuery } from 'react-query';
+import NoData from '../../Components/NoData/NoData';
 
 const Blogs = () => {
     const { data, isLoading } = useQuery('questions', async () => await axios.get('http://localhost:5000/question'));
@@ -21,7 +22,7 @@ const Blogs = () => {
                         </div>
                         <div className='space-y-3 basis-full lg:basis-[55%]'>
                             {
-                                questions?.map(item => <SingleQuestion key={item._id} item={item} />)
+                                questions?.length ? questions?.map(item => <SingleQuestion key={item._id} item={item} />) : <div className='flex items-center justify-center h-[60vh]'><NoData /></div>
                             }
                         </div>
                     </div>

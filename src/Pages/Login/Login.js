@@ -7,29 +7,33 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import auth from '../../Firebase/Firebase.init';
+import useToken from '../../Hooks/useToken';
 import SocilalLogin from '../../Shared/SocialLogin/SocilalLogin';
+
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [showPassword, setShowPassword] = useState(false);
+    const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
+
     useEffect(() => {
-        if(user){
+        if (token) {
             toast.success('Successfully login', { toastId: 'login' })
             navigate(from, { replace: true });
         }
-    },[user, from, navigate]);
+    }, [from, navigate, token]);
 
     const onSubmit = async data => {
         await signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
 
-    
+
 
     return (
         <section>

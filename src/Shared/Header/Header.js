@@ -24,9 +24,7 @@ const Header = () => {
         {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
-        {
-            user && <li ><span onClick={logOut} className='bg-red-500 text-white gap-2 lg:ml-2'><IoMdLogOut className='text-lg' /> Logout</span></li>
-        }
+
     </>;
 
 
@@ -52,10 +50,20 @@ const Header = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user ? <div className='space-x-2 flex items-center'>
-                                        <button className="bg-primary w-10 h-10 rounded-full ring-2 ring-secondary text-white ">{ user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
-                                            user.email.substring(0, 1).toUpperCase()
-                                        }</button>
+                            user ? <div className='space-x-2 items-center dropdown dropdown-end '>
+                                <button tabIndex="1" className="btn btn-circle ring-1 ring-secondary">{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
+                                    user.email.substring(0, 1).toUpperCase()
+                                }</button>
+                                <ul tabIndex="1" className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52 mt-3">
+                                    <div className='inline-flex justify-center items-center text-3xl leading-none text-white bg-primary w-20 h-20 m-auto rounded-full'>{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> : user.email.substring(0, 1).toUpperCase()}</div>
+                                    <h3 className="text-lg text-center mb-1">{user.displayName}</h3>
+                                    <li className='mb-1'>
+                                        <Link to='/dashboard/my-profile' className="btn-secondary btn btn-sm text-white rounded text-center leading-none">View Profile</Link>
+                                    </li>
+                                    {
+                                        user && <li ><button onClick={logOut} className='btn hover:bg-red-500 btn-error text-white gap-2 btn-sm leading-none'><IoMdLogOut className='text-lg' /> Logout</button></li>
+                                    }
+                                </ul>
                                 {
                                     pathname.includes('dashboard') && <label htmlFor="dashboard-drawer" className="btn btn-ghost drawer-button lg:hidden bg-gray-100">
                                         <BsChevronRight />

@@ -6,21 +6,22 @@ import { FaFacebook } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
+import useToken from '../../Hooks/useToken';
 
 const SocilalLogin = () => {
     const [signInWithGoogle, userByGoogle, loadingByGoogle, errorByGoogle] = useSignInWithGoogle(auth);
     const [signInWithFacebook, userByFb, loadingByFb, errorByFb] = useSignInWithFacebook(auth);
-
+    const [token] = useToken(userByGoogle || userByFb)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if(userByGoogle || userByFb){
+        if(token){
             toast.success('Successfully login', { toastId: 'SocilalLogin' })
             navigate(from, { replace: true });
         }
-    },[userByFb,userByGoogle, from, navigate]);
+    },[token, from, navigate]);
 
     if (errorByGoogle || errorByFb) {
         if (errorByGoogle?.message.includes('auth/popup-closed-by-user') || errorByFb?.message.includes('auth/popup-closed-by-user')) {
@@ -28,7 +29,6 @@ const SocilalLogin = () => {
         } else {
             toast.error(errorByFb?.message || errorByGoogle?.message, { toastId: 'popup2' });
         }
-
     }
 
     return (

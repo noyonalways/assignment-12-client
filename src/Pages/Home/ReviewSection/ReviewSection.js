@@ -16,7 +16,7 @@ const ReviewSection = () => {
         <section id='reviews' className='py-8'>
             <div className='text-center py-3 mb-10'>
                 <p className='text-lg'>Reviews</p>
-                <h2 className="text-3xl  font-bold">What our client's says</h2>
+                <h2 className="text-3xl  font-bold">What our client's say</h2>
             </div>
             {
                 isLoading ? <div className="h-screen flex items-center"><LoadingRipple /> </div> : <div className='container mx-auto px-5 lg:px-0'>

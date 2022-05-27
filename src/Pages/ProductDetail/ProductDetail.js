@@ -85,8 +85,8 @@ const ProductDetail = () => {
 
 
             const orderProduct = {
-                userEmail: user.email,
-                userName: user.displayName,
+                email: user.email,
+                name: user.displayName,
                 userAddress: address.value,
                 userPhone: phone.value,
                 productName: product?.name,
@@ -94,10 +94,11 @@ const ProductDetail = () => {
                 productId: product?._id,
                 productImg: product?.img,
                 productPrice: product?.price,
-                totalCost: (wantQuantity.value * parseInt(product?.price)).toFixed(2),
+                totalCost: parseInt((wantQuantity.value * parseInt(product?.price)).toFixed(2)),
                 date: formatedDate
             }
             const {data} = await axios.post('http://localhost:5000/order', orderProduct);
+            console.log(data.result);
             if(data.success){
                 toast.success('Order placed successfully', {toastId: 'order'})
             }

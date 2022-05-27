@@ -16,18 +16,18 @@ const SignUp = () => {
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [showPassword, setShowPassword] = useState(false);
     const [terms, setTerms] = useState(false);
+    const [token] = useToken(user);
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    const [token] = useToken(user);
-
+    
     useEffect(() => {
-        if(user){
-            // toast.success('Successfully SignUp', { toastId: 'signUp' });
-            // navigate(from, { replace: true });
-            // console.log(token);
+        if(token){
+            toast.success('Successfully SignUp', { toastId: 'signUp' });
+            navigate(from, { replace: true });
+
         }
-    },[user, from, navigate, token]);
+    },[from, navigate, token]);
 
 
     const onSubmit = async data => {
