@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const axiosPrivate = axios.create({});
 
 axiosPrivate.interceptors.request.use(function (config) {

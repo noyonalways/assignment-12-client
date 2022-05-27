@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
 import PageTitle from '../../../Components/PageTitle/PageTitle';
@@ -7,14 +6,33 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import NoData from '../../../Components/NoData/NoData';
 import SingleRow from './SingleRow/SingleRow';
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import axiosPrivate from '../../../Api/AxiosPrivate';
 
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
-    const { data, isLoading } = useQuery('myOrders', async () => await axios.get(`http://localhost:5000/order?email=${user.email}`));
-    const myOrders = data?.data;
-    console.log(data);
+    const { data: result, isLoading } = useQuery('myOrders', async () => {
+        try {
+            return await axiosPrivate.get(`http://localhost:5000/myOrder?email=${user.email}`);
+
+        } catch (error) {
+            if (error.response.status === 401 || error.response.status === 403) {
+                signOut(auth);
+                navigate('/login');
+                localStorage.removeItem('accessToken');
+            }
+        }
+    });
+    const myOrders = result?.data;
+
+
+
+
+
 
     return (
         <div className='p-5'>

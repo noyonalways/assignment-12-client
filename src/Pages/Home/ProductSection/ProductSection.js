@@ -1,13 +1,29 @@
-import axios from 'axios';
+
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import axiosPrivate from '../../../Api/AxiosPrivate';
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
 import NoData from '../../../Components/NoData/NoData';
+import auth from '../../../Firebase/Firebase.init';
 import ProductCard from './ProductCard/ProductCard';
 
 const ProductSection = () => {
-    const { data, isLoading } = useQuery('products', async () => await axios.get('http://localhost:5000/product'));
-    const products = data?.data.data;
+    const navigate = useNavigate();
+    const { data: result, isLoading } = useQuery('products', async () => {
+        try {
+            return await axiosPrivate.get('http://localhost:5000/product')
+        } catch (error) {
+            if (error.response.status === 401 || error.response.status === 403) {
+                signOut(auth);
+                navigate('/login');
+                localStorage.removeItem('accessToken');
+            }
+        }
+    })
+
+    const products = result?.data?.data;
 
 
     return (

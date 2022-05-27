@@ -1,15 +1,27 @@
-import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import axiosPrivate from '../../../Api/AxiosPrivate';
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
 import NoData from '../../../Components/NoData/NoData';
 import PageTitle from '../../../Components/PageTitle/PageTitle';
+import auth from '../../../Firebase/Firebase.init';
 import UserRow from './UserRow/UserRow';
 
-
 const MakeAdmin = () => {
-    const { data, isLoading } = useQuery('users', async () => await axios.get('http://localhost:5000/user'));
-    const users = data?.data;
+    const navigate = useNavigate();
+    const { data: result, isLoading, refetch } = useQuery('users', async () => {
+        try {
+            return await axiosPrivate.get('http://localhost:5000/user');
+        } catch (error) {
+            if (error.response.status === 401 || error.response.status === 403) {
+                signOut(auth);
+                navigate('/login');
+            }
+        }
+    });
+    const users = result?.data;
 
     return (
         <div className='p-5'>
@@ -29,7 +41,7 @@ const MakeAdmin = () => {
                             </thead>
                             <tbody>
                                 {
-                                    users?.map((user, index) => <UserRow index={index} user={user} key={user._id} />)
+                                    users?.map((user, index) => <UserRow refetch={refetch} index={index} user={user} key={user._id} />)
                                 }
                             </tbody>
                         </table> : <div className='h-[90vh] flex items-center justify-center'><NoData /></div>

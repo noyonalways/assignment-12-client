@@ -50,7 +50,7 @@ const Header = () => {
                     </div>
                     <div className="navbar-end">
                         {
-                            user ? <div className='space-x-2 items-center dropdown dropdown-end '>
+                            user ? <div className='space-x-2 items-center  dropdown dropdown-end '>
                                 <button tabIndex="1" className="btn btn-circle btn-primary ring-2 ring-secondary">{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
                                     user.email.substring(0, 1).toUpperCase()
                                 }</button>
@@ -65,8 +65,8 @@ const Header = () => {
                                     }
                                 </ul>
                                 {
-                                    pathname.includes('dashboard') && <label htmlFor="dashboard-drawer" className="btn btn-ghost drawer-button lg:hidden bg-gray-100">
-                                        <BsChevronRight />
+                                    pathname.includes('dashboard') && <label htmlFor="dashboard-drawer" className="btn btn-ghost drawer-button lg:hidden bg-gray-100 inline-block">
+                                        <BsChevronRight  className='leading-none mt-4'/>
                                     </label>
                                 }
                             </div>

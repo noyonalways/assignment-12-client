@@ -26,6 +26,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import RequireAuth from './Shared/RequireAuth/RequireAuth';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
+import RequireAdmin from './Shared/RequireAdmin/RequireAdmin';
 
 function App() {
   useEffect(() => {
@@ -48,10 +49,10 @@ function App() {
             <Route index element={<MyOrders />} />
             <Route path='add-review' element={<AddReview />} />
             <Route path='my-profile' element={<MyProfile />} />
-            <Route path='manage-orders' element={<ManageAllOrders />} />
-            <Route path='add-product' element={<AddProduct />} />
-            <Route path='make-admin' element={<MakeAdmin />} />
-            <Route path='manage-products' element={<ManageProducts />} />
+            <Route path='manage-orders' element={<RequireAdmin><ManageAllOrders /></RequireAdmin>} />
+            <Route path='add-product' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
+            <Route path='make-admin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
+            <Route path='manage-products' element={<RequireAdmin><ManageProducts /></RequireAdmin>} />
           </Route>
           <Route path='login' element={<Login />} />
           <Route path='signup' element={<SignUp />} />
