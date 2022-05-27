@@ -1,13 +1,14 @@
 import React from 'react';
 
-const SingleRow = ({order}) => {
-    const {name, productImg, productPrice, date, email, productName, productQuantity, totalCost} = order;
+const SingleRow = ({order, index}) => {
+    const {productImg, productPrice, date, email, productName, productQuantity, totalCost} = order;
     return (
         <tr>
+            <th>{parseInt(index) +1}</th>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
+                        <div className="mask mask-squircle w-16 h-16">
                             <img src={productImg} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
@@ -24,7 +25,8 @@ const SingleRow = ({order}) => {
             <td>
                 {email}
                 <br />
-                <span className="badge badge-ghost badge-sm">Transaction id</span>
+                <span className="badge badge-ghost ">Transaction id</span>
+                <span className="badge badge-ghost badge-sm block">{date}</span>
             </td>
             
             <td><button className="btn btn-warning btn-sm text-white">Pay</button></td>

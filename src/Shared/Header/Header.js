@@ -51,12 +51,12 @@ const Header = () => {
                     <div className="navbar-end">
                         {
                             user ? <div className='space-x-2 items-center dropdown dropdown-end '>
-                                <button tabIndex="1" className="btn btn-circle ring-1 ring-secondary">{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
+                                <button tabIndex="1" className="btn btn-circle btn-primary ring-2 ring-secondary">{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> :
                                     user.email.substring(0, 1).toUpperCase()
                                 }</button>
                                 <ul tabIndex="1" className="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52 mt-3">
                                     <div className='inline-flex justify-center items-center text-3xl leading-none text-white bg-primary w-20 h-20 m-auto rounded-full'>{user?.photoURL ? <img className='rounded-full' src={user.photoURL} alt="" /> : user.email.substring(0, 1).toUpperCase()}</div>
-                                    <h3 className="text-lg text-center mb-1">{user.displayName}</h3>
+                                    <h3 className="text-lg text-center mb-1 font-semibold py-1">{user.displayName}</h3>
                                     <li className='mb-1'>
                                         <Link to='/dashboard/my-profile' className="btn-secondary btn btn-sm text-white rounded text-center leading-none">View Profile</Link>
                                     </li>

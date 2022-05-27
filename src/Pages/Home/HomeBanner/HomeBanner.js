@@ -18,7 +18,7 @@ const HomeBanner = () => {
     return (
         <div>
             {
-                isLoading ? <div className='py-5 h-screen flex items-center'><LoadingCircle /></div> : <Swiper pagination={{ dynamicBullets: true, grabCursor: true, }} modules={[Pagination]} className="mySwiper">
+                isLoading ? <div className='py-5 h-screen flex items-center'><LoadingCircle /></div> : <Swiper  loop={true} pagination={{ dynamicBullets: true, grabCursor: true, }} modules={[Pagination]} className="mySwiper">
                     {
                         banners?.length ? banners?.map((item) => <SwiperSlide key={item._id}> <SingleSlide item={item} /></SwiperSlide>) : <div className='h-screen flex items-center justify-center'><h2 className="text-3xl font-semibold">Reload Slider</h2></div>
                     }

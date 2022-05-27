@@ -6,24 +6,26 @@ import auth from '../../../Firebase/Firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import NoData from '../../../Components/NoData/NoData';
 import SingleRow from './SingleRow/SingleRow';
+import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
 
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
 
-    const { data } = useQuery('myOrders', async () => await axios.get(`http://localhost:5000/myOrder?email=${user.email}`));
+    const { data, isLoading } = useQuery('myOrders', async () => await axios.get(`http://localhost:5000/order?email=${user.email}`));
     const myOrders = data?.data;
     console.log(data);
 
     return (
-        <div>
+        <div className='p-5'>
             <PageTitle title={'My orders'} />
-            <div className=" bg-red-200  p-5">
-                <div className="overflow-x-auto lg:w-[90%] mx-auto">
+            {
+                isLoading ? <div className="h-screen flex items-center justify-center"><LoadingRipple /> </div> : <div className="overflow-x-auto lg:w-[92%] mx-auto shadow-md">
                     {
                         myOrders?.length ? <table className="table w-full">
                             <thead>
                                 <tr>
+                                    <th></th>
                                     <th>Product Info</th>
                                     <th>Product Quantity</th>
                                     <th>USer Info</th>
@@ -33,13 +35,13 @@ const MyOrders = () => {
                             </thead>
                             <tbody>
                                 {
-                                    myOrders?.map(order => <SingleRow order={order} key={order._id} />)
+                                    myOrders?.map((order, index) => <SingleRow index={index} order={order} key={order._id} />)
                                 }
                             </tbody>
-                        </table> : <div className='h-[85vh] flex items-center justify-center'><NoData/></div>
+                        </table> : <div className='h-[90vh] flex items-center justify-center'><NoData /></div>
                     }
                 </div>
-            </div>
+            }
         </div>
     );
 };
