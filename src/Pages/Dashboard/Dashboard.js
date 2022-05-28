@@ -24,12 +24,12 @@ const Dashboard = () => {
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                     {
-                        !admin && <li><Link to='/dashboard'>My Orders</Link></li>
+                        !admin && <li><Link to='/dashboard/my-order'>My Orders</Link></li>
                     }
                     {
                         !admin && <li><Link to='/dashboard/add-review'>Add Review</Link></li>
                     }
-                    <li><Link to='/dashboard/my-profile'>My Profile</Link></li>
+                    <li><Link to='/dashboard'>My Profile</Link></li>
                     {
                         admin && <>
                             <li><Link to='/dashboard/manage-orders'>Manage All Orders</Link></li>

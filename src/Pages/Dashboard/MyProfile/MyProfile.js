@@ -7,7 +7,6 @@ import auth from '../../../Firebase/Firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
-    console.log(user);
     return (
         <div>
             <PageTitle title={'My Profile'} />
@@ -16,13 +15,13 @@ const MyProfile = () => {
                     <div className="w-full lg:w-[800px] xl:w-[880px] h-auto  rounded-xl shadow-lg">
                         <div className='flex justify-between py-4 px-8 border-b'>
                             <h2 className="text-2xl font-semibold">My Profile</h2>
-                            <button className='text-secondary'>Edit</button>
+                            <Link to='/dashboard/edit-profile' className='text-secondary'>Edit</Link>
                         </div>
                         <div className="px-5 py-6 lg:px-8 lg:py-6">
                             <div className="flex flex-col lg:flex-row lg:space-x-6">
                                 <div className='space-y-3 text-center'>
                                     {
-                                        user.photoURL ? <img className='w-40 rounded-full mx-auto' src={user.photoURL} alt="" /> : <div className="text-8xl bg-primary w-40 h-40 mx-auto flex items-center justify-center rounded-full text-white font-semibold">{user.email.substring(0, 1).toUpperCase()}</div>
+                                        user.photoURL ? <img className='w-40 h-40 object-contain rounded-full mx-auto' src={user.photoURL} alt="" /> : <div className="text-8xl bg-primary w-40 h-40 mx-auto flex items-center justify-center rounded-full text-white font-semibold">{user.email.substring(0, 1).toUpperCase()}</div>
                                     }
                                     <Link to='/dashboard/edit-profile' className="btn btn-secondary text-white mx-auto">Edit Profile</Link>
                                 </div>
@@ -41,7 +40,7 @@ const MyProfile = () => {
                                     </div>
                                     <div>
                                         <span className="font-semibold">Address</span>
-                                        <p className="text-lg"></p>
+                                        <p className="text-lg">{user?.address}</p>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleRow = ({order, index}) => {
-    const {productImg, productPrice, date, email, productName, productQuantity, totalCost} = order;
+    const {productImg, productPrice, date, email, productName, productQuantity, totalCost, price , _id} = order;
     return (
         <tr>
             <th>{parseInt(index) +1}</th>
@@ -20,6 +21,7 @@ const SingleRow = ({order, index}) => {
             </td>
             <td>
                 <div>Quantity: {productQuantity}</div>
+                <p>Per product price: ${productPrice}</p>
                 <div>Total Cost: ${totalCost}</div>
             </td>
             <td>
@@ -29,7 +31,7 @@ const SingleRow = ({order, index}) => {
                 <span className="badge badge-ghost badge-sm block">{date}</span>
             </td>
             
-            <td><button className="btn btn-warning btn-sm text-white">Pay</button></td>
+            <td>{(!order?.unpaid) ? <Link to={`/dashboard/payment/${_id}`} className='btn btn-warning btn-sm text-white'>Pay</Link> : <button className='btn btn-secondary btn-sm'>Paid</button>}</td>
             <th>
                 <button className="btn btn-error btn-sm text-white">Cancel Order</button>
             </th>

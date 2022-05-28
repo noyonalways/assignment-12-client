@@ -24,7 +24,7 @@ const ManageSingleProduct = ({ product, index }) => {
                 <h3>Sold: {sold}</h3>
             </td>
             <th>
-                <button className="btn btn-error btn-sm text-white">Delete</button>
+                <button disabled={parseInt(sold) > 0} className="btn btn-error btn-sm text-white">Delete</button>
             </th>
         </tr>
     );
