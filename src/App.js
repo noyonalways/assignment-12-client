@@ -27,6 +27,7 @@ import { useEffect } from 'react';
 import RequireAuth from './Shared/RequireAuth/RequireAuth';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import RequireAdmin from './Shared/RequireAdmin/RequireAdmin';
+import EditProfile from './Pages/Dashboard/MyProfile/EditProfile/EditProfile';
 
 function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ function App() {
             <Route index element={<MyOrders />} />
             <Route path='add-review' element={<AddReview />} />
             <Route path='my-profile' element={<MyProfile />} />
+            <Route path='edit-profile' element={<EditProfile/>} />
             <Route path='manage-orders' element={<RequireAdmin><ManageAllOrders /></RequireAdmin>} />
             <Route path='add-product' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
             <Route path='make-admin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
