@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { AiOutlineEye } from 'react-icons/ai'
 import { AiOutlineEyeInvisible } from 'react-icons/ai'
@@ -32,14 +32,33 @@ const Login = () => {
         await signInWithEmailAndPassword(data.email, data.password);
         reset();
     };
+    const [sendPasswordResetEmail, ] = useSendPasswordResetEmail(auth);
 
+    const [email, setEmail] = useState({ value: '', error: '' });
+    const handleEmail = inputEmail => {
+        if (/\S+@\S+\.\S+/.test(inputEmail)) {
+            setEmail({ value: inputEmail, error: '' })
+        } else {
+            setEmail({ value: '', error: 'Input a valid email' })
 
+        }
+    };
+
+    const resetPassword = async () => {
+        if (email.value === '') {
+            setEmail({ value: '', error: 'Email is required' })
+        }
+        else if (email.value) {
+            await sendPasswordResetEmail(email.value);
+            toast.success('Reset password email Sent', { id: 'restEmail' });
+        }
+    }
 
     return (
         <section>
             <div className="flex min-h-screen overflow-hidden  md:py-0 md:px-0">
                 <div className="flex flex-col justify-center flex-1  px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-                    {loading ? <LoadingRipple /> : <div className="w-full max-w-xl mx-auto lg:w-96 ">
+                    {loading ? <LoadingRipple /> : <div data-aos="zoom-in-up" className="w-full max-w-xl mx-auto lg:w-96 ">
                         <div>
                             <a href="./index.html" className="text-blue-600 text-medium">Tech Parts</a>
                             <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">Login</h2>
@@ -51,7 +70,7 @@ const Login = () => {
                                     <div>
                                         <label htmlFor="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                                         <div className="mt-1">
-                                            <input {...register("email", {
+                                            <input onBlur={(e) => handleEmail(e.target.value)}  {...register("email", {
                                                 required: {
                                                     value: true,
                                                     message: "Emaild is required"
@@ -71,7 +90,7 @@ const Login = () => {
                                     <div className="space-y-1">
                                         <label htmlFor="password" className="flex justify-between text-sm font-medium text-neutral-600">
                                             <span>Password</span>
-                                            <button type='button' className="font-medium text-blue-600 hover:text-blue-500">Forgot your password? </button>
+                                            <button onClick={resetPassword} type='button' className="font-medium text-blue-600 hover:text-blue-500">Forgot your password? </button>
                                         </label>
                                         <div className="flex relative">
                                             <div className='w-full'>

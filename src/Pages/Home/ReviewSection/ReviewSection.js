@@ -9,7 +9,7 @@ import './ReviewSection.css'
 import NoData from '../../../Components/NoData/NoData';
 
 const ReviewSection = () => {
-    const { data, isLoading } = useQuery('allReview', async () => await axios.get('http://localhost:5000/review'));
+    const { data, isLoading } = useQuery('allReview', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/review'));
     const reviews = data?.data.data;
 
     return (

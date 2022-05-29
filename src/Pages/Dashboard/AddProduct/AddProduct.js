@@ -4,6 +4,7 @@ import { BsImage } from 'react-icons/bs'
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import LoadingRipple from '../../../Components/LoadingRipple/LoadingRipple';
+import axiosPrivate from '../../../Api/AxiosPrivate';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -32,7 +33,7 @@ const AddProduct = () => {
             sold: 0,
         };
         
-        const {data: result, } = await axios.post(`http://localhost:5000/product`, newProduct);
+        const {data: result, } = await axiosPrivate.post(`https://glacial-temple-86041.herokuapp.com/product`, newProduct);
         console.log(result);
         reset();
         setLoaging(false);
@@ -43,7 +44,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
             <PageTitle title={'Add Product'} />
             <div className="mx-auto container py-5">
                 <div className='lg:w-[450px] mx-auto py-3 px-3 shadow-lg rounded'>

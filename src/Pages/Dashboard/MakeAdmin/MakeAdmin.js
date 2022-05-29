@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const navigate = useNavigate();
     const { data: result, isLoading, refetch } = useQuery('users', async () => {
         try {
-            return await axiosPrivate.get('http://localhost:5000/user');
+            return await axiosPrivate.get('https://glacial-temple-86041.herokuapp.com/user');
         } catch (error) {
             if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);
@@ -24,7 +24,7 @@ const MakeAdmin = () => {
     const users = result?.data;
 
     return (
-        <div className='p-5'>
+        <div data-aos="fade-up" data-aos-duration="1000" className='p-5'>
             <PageTitle title={'Make Admin'} />
             {
 

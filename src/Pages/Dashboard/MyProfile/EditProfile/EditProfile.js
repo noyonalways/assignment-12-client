@@ -36,7 +36,7 @@ const EditProfile = () => {
     }
 
     return (
-        <div className="p-5">
+        <div data-aos="fade-up" data-aos-duration="1000" className="p-5">
             <div className="w-full lg:w-[800px] xl:w-[880px] h-auto  rounded-xl shadow-lg mx-auto ">
                 <div className="card flex-shrink-0 w-full bg-base-100">
                     <form onSubmit={handleUpdateProfile} className="card-body">

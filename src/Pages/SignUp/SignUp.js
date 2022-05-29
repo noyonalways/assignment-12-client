@@ -11,7 +11,7 @@ import LoadingRipple from '../../Components/LoadingRipple/LoadingRipple';
 import useToken from '../../Hooks/useToken';
 
 const SignUp = () => {
-    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [updateProfile, updating] = useUpdateProfile(auth);
     const [showPassword, setShowPassword] = useState(false);
@@ -47,7 +47,7 @@ const SignUp = () => {
     return (
         <section>
             <div className="flex flex-col justify-center min-h-screen py-10 sm:px-6 lg:px-8  ">
-                <div className='border sm:mx-auto sm:w-full sm:max-w-md border-none lg:border-gray-50 rounded lg:shadow-md'>
+                <div data-aos="zoom-in-up" className='border sm:mx-auto sm:w-full sm:max-w-md border-none lg:border-gray-50 rounded lg:shadow-md'>
                     <div className="sm:mx-auto sm:w-full sm:max-w-md">
                         <h2 className="mt-6 text-3xl font-extrabold text-center text-neutral-600">Sign Up</h2>
                     </div>

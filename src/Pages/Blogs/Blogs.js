@@ -9,7 +9,7 @@ import { useQuery } from 'react-query';
 import NoData from '../../Components/NoData/NoData';
 
 const Blogs = () => {
-    const { data, isLoading } = useQuery('questions', async () => await axios.get('http://localhost:5000/question'));
+    const { data, isLoading } = useQuery('questions', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/question'));
     const questions = data?.data?.data;
     return (
         <section >
@@ -17,7 +17,8 @@ const Blogs = () => {
             {
                 isLoading ? <div className="h-screen flex items-center"><LoadingRipple /></div> : <div className="container mx-auto py-10 px-3 lg:px-0">
                     <div className="flex justify-between flex-wrap">
-                        <div className='basis-full lg:basis-[40%]'>
+                        <div data-aos="fade-up"
+                        data-aos-duration="500" className='basis-full lg:basis-[40%]'>
                             <img className='w-full' src={Image} alt="" />
                         </div>
                         <div className='space-y-3 basis-full lg:basis-[55%]'>

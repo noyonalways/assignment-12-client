@@ -1,7 +1,7 @@
 [
     {
-        "name": "Mother Board",
-        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/x570s-ud-01-500x500-1.jpg",
+        "name": "Camera Notch",
+        "img": "https://i.ibb.co/zJR0Zxd/d73c9908-4d26-4538-bb9c-8c60ca8508a0.jpg",
         "price": 120,
         "availableQuantity": 4500,
         "minQunatity": 100,
@@ -18,8 +18,8 @@
         "sold": 0
     },   
     {
-        "name": "Processor",
-        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/ryzen-3-5300g-500x500-1.jpg",
+        "name": "Power Module",
+        "img": "https://i.ibb.co/jk4fmjd/e2ed50d9-d7fd-44f5-90d8-dc3d2089ac12.jpg",
         "price": 120,
         "availableQuantity": 4500,
         "minQunatity": 100,
@@ -45,8 +45,8 @@
         "sold": 0
     },
     {
-        "name": "Power Supply",
-        "img": "https://creatuscomputer.com/wp-content/uploads/2022/03/p850w-1.jpg",
+        "name": "Sensor",
+        "img": "https://i.ibb.co/fqhJJFb/a75f496d-061c-47ee-abc2-e228aedfa2e3.jpg",
         "price": 110,
         "availableQuantity": 6000,
         "minQunatity": 100,

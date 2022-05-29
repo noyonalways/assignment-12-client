@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SingleRow = ({order, index}) => {
-    const {productImg, productPrice, date, email, productName, productQuantity, totalCost, price , _id} = order;
+const SingleRow = ({order, index, setDeleteOrder}) => {
+    const {productImg, productPrice, date, email, productName, productQuantity, totalCost, paid , _id, transactionId} = order;
     return (
-        <tr>
+        <tr >
             <th>{parseInt(index) +1}</th>
             <td>
                 <div className="flex items-center space-x-3">
@@ -27,13 +27,17 @@ const SingleRow = ({order, index}) => {
             <td>
                 {email}
                 <br />
-                <span className="badge badge-ghost ">Transaction id</span>
+                {
+                    paid && <span className="text-sm text-secondary">Transaction id: {transactionId}</span>
+                }
                 <span className="badge badge-ghost badge-sm block">{date}</span>
             </td>
             
-            <td>{(!order?.unpaid) ? <Link to={`/dashboard/payment/${_id}`} className='btn btn-warning btn-sm text-white'>Pay</Link> : <button className='btn btn-secondary btn-sm'>Paid</button>}</td>
+            <td>{(!paid) ? <Link to={`/dashboard/payment/${_id}`} className='btn btn-secondary btn-sm text-white'>Pay</Link> : <span className='text-secondary '>Paid</span>}</td>
             <th>
-                <button className="btn btn-error btn-sm text-white">Cancel Order</button>
+                {
+                    !paid && <label onClick={() => setDeleteOrder(order)}  htmlFor="delete-confirm-modal" className="btn btn-error text-white modal-button btn-sm">Cancel Order</label>
+                }
             </th>
         </tr>
     );

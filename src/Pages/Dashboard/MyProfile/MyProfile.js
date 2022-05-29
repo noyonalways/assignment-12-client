@@ -8,11 +8,11 @@ import auth from '../../../Firebase/Firebase.init';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
             <PageTitle title={'My Profile'} />
             <div className="container mx-auto py-4">
                 <div className='flex items-start justify-center w-full px-5'>
-                    <div className="w-full lg:w-[800px] xl:w-[880px] h-auto  rounded-xl shadow-lg">
+                    <div  className="w-full lg:w-[800px] xl:w-[880px] h-auto  rounded-xl shadow-lg">
                         <div className='flex justify-between py-4 px-8 border-b'>
                             <h2 className="text-2xl font-semibold">My Profile</h2>
                             <Link to='/dashboard/edit-profile' className='text-secondary'>Edit</Link>

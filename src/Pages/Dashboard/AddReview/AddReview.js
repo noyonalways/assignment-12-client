@@ -18,14 +18,14 @@ const AddReview = () => {
         }
 
 
-        const { data } = await axios.post(`http://localhost:5000/review`, newReview);
+        const { data } = await axios.post(`https://glacial-temple-86041.herokuapp.com/review`, newReview);
         console.log(data)
         reset();
     }
 
 
     return (
-        <section className='w-full'>
+        <section data-aos="fade-up" data-aos-duration="1000" className='w-full'>
             <PageTitle title={'Add Review'} />
             <div className="container mx-auto">
                 <h2 className="text-3xl text-center font-semibold mt-10 mb-6">Add Your review</h2>

@@ -8,7 +8,7 @@ const useToken = (user) => {
         const currentUser = { email: email,};
         if (email) {
             (async () => {
-                const { data } = await axios.put(`http://localhost:5000/user/${email}`, currentUser);
+                const { data } = await axios.put(`https://glacial-temple-86041.herokuapp.com/user/${email}`, currentUser);
                 const accessToken = data.token;
                 localStorage.setItem('accessToken', accessToken);
                 setToken(accessToken);

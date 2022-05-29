@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ManageSingleProduct = ({ product, index }) => {
-    const { img, name, price, sold,  availableQuantity} = product;
+const ManageSingleProduct = ({ product, index, setDeleteProduct }) => {
+    const { img, name, price, sold, availableQuantity, } = product;
     return (
         <tr>
             <th>{parseInt(index) + 1}</th>
@@ -24,7 +24,9 @@ const ManageSingleProduct = ({ product, index }) => {
                 <h3>Sold: {sold}</h3>
             </td>
             <th>
-                <button disabled={parseInt(sold) > 0} className="btn btn-error btn-sm text-white">Delete</button>
+                {
+                    parseInt(sold) < 1 && <label onClick={() => setDeleteProduct(product)} htmlFor="manage-modal" className="btn btn-error text-white modal-button btn-sm">Delete</label>
+                }
             </th>
         </tr>
     );

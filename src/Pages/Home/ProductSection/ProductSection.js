@@ -13,7 +13,7 @@ const ProductSection = () => {
     const navigate = useNavigate();
     const { data: result, isLoading } = useQuery('products', async () => {
         try {
-            return await axiosPrivate.get('http://localhost:5000/product')
+            return await axiosPrivate.get('https://glacial-temple-86041.herokuapp.com/product')
         } catch (error) {
             if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);
@@ -35,7 +35,7 @@ const ProductSection = () => {
             <div className="container mx-auto px-6 lg:px-2">
                 {
                     isLoading ? <div className="flex items-center justify-center h-screen"><LoadingRipple /> </div> : <>
-                        {products?.length ? <div className='grid lg:grid-cols-3 gap-12'>{products?.map(product => <ProductCard key={product._id} product={product} />)}</div> : <div className='h-screen flex items-center justify-center'><NoData /></div>}
+                        {products?.length ? <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-12'>{products?.map(product => <ProductCard key={product._id} product={product} />)}</div> : <div className='h-screen flex items-center justify-center'><NoData /></div>}
                     </>
                 }
             </div>

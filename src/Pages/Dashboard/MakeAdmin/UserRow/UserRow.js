@@ -7,7 +7,7 @@ const UserRow = ({ user, index, refetch }) => {
 
     const handleMakeAdmin = async () => {
         try {
-            const { data } = await axiosPrivate.put(`http://localhost:5000/user/admin/${email}`)
+            const { data } = await axiosPrivate.put(`https://glacial-temple-86041.herokuapp.com/user/admin/${email}`)
             refetch();
             if (data.acknowledged) {
                 toast.success("Successfully made an Admin", {toastId: 'admin'})

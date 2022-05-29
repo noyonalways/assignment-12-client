@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
     const { name, img, availableQuantity, price, productDescription, sold, _id } = product;
 
     return (
-        <div className="card card-compact  bg-base-100 shadow-xl hover:scale-[1.02] duration-200">
+        <div data-aos="zoom-out-up" data-aos-duration="1500" className="card card-compact  bg-base-100 shadow-xl hover:scale-[1.02] duration-200">
             <figure className=' max-w-xs py-2 mx-auto'><img src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="text-2xl font-semibold">{name}</h2>

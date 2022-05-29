@@ -1,7 +1,14 @@
 import React from 'react';
+import axiosPrivate from '../../../../Api/AxiosPrivate';
 
-const ManageSingleRow = ({ order, index }) => {
-    const { productPrice, date, email, productName, productQuantity, totalCost, productImg } = order;
+const ManageSingleRow = ({ order, index, setDeleteOrder, refetch }) => {
+    const { productPrice, date, email, productName, productQuantity, totalCost, productImg, paid, transactionId, status, _id } = order;
+
+    const handlePending = async () => {
+        await axiosPrivate.put(`https://glacial-temple-86041.herokuapp.com/status/${_id}`);
+        refetch();
+    }
+
     return (
         <tr>
             <th>{parseInt(index) + 1}</th>
@@ -20,17 +27,23 @@ const ManageSingleRow = ({ order, index }) => {
                     </div>
                 </div>
             </td>
-            
+
             <td>
                 <h3 className="text-lg font-semibold">{email}</h3>
-                <p>Transaction id{ }</p>
+                {
+                    transactionId && <p className='text-secondary'>Transaction id: {transactionId}</p>
+                }
                 <p className='badge badge-ghost'>Date {date}</p>
             </td>
             <td>
-                <button className="btn-sm btn-secondary btn text-white">Pending...</button>
+                {
+                    paid ? (<button onClick={handlePending} className={`btn-sm btn text-white ${status === 'shipped' ? 'btn-primary': 'btn-secondary '}`}>{status}</button>) : <span className='text-warning font-semibold'>Unpaid</span>
+                }
             </td>
             <td>
-                <button className="btn-sm btn-primary btn text-white">Shipped</button>
+                {
+                    !paid && <label onClick={() => setDeleteOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-error text-white modal-button btn-sm">Delete</label>
+                }
             </td>
         </tr>
     );

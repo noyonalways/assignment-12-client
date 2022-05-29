@@ -17,7 +17,7 @@
     },
     {
         "question": "You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?",
-        "answer": "I am fetching data from the database through JSON. When I want to search for a product then I will filter products using a query to the heading and when I click on the search button. Then It will filter all the data and return to me the matching name products."
+        "answer": "I am fetching data from the database through JSON. When I want to search for a product then I will filter products using a query to the heading and when I click on the search button. Then It will filter all the data and return to me the matching name products. Example: const array = [{name: 'mango', price: 10, }, {name: 'apple', price: 15, }, {name: 'banana', price: 5, }] const mango = array.filter(element => element.name.includes('mango');"
     },
     {
         "question": "What is a unit test? Why should write unit tests?",
