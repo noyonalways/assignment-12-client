@@ -6,7 +6,7 @@ const LetestNews = () => {
         <section className="pt-20 lg:pt-[120px] pb-10 px-5 lg:pb-20">
             <div className="container mx-auto">
                 <div data-aos="fade-up"
-                        data-aos-duration="500" className="flex flex-wrap justify-center -mx-4">
+                    data-aos-duration="500" className="flex flex-wrap justify-center -mx-4">
                     <div className="w-full px-4">
                         <div className="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
                             <span className="font-semibold text-lg text-primary mb-2 block">
@@ -25,14 +25,14 @@ const LetestNews = () => {
                                 Our Recent News
                             </h2>
                             <p className="text-base text-body-color">
-                                There are many variations of passages of Lorem Ipsum available
-                                but the majority have suffered alteration in some form.
+
+                                delivers greater performance and reliability. This new Transcend SSD220Q SSD Featuring with QLC NAND Flash, density per cell boosts 33%.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div data-aos="fade-up"
-                        data-aos-duration="1000" className="flex flex-wrap -mx-4">
+                    data-aos-duration="1000" className="flex flex-wrap -mx-4">
                     <div className="w-full md:w-1/2 lg:w-1/3 px-4">
                         <div className="max-w-[370px] mx-auto mb-10">
                             <div className="rounded overflow-hidden mb-8">
@@ -78,8 +78,8 @@ const LetestNews = () => {
                                     </Link>
                                 </h3>
                                 <p className="text-base text-body-color">
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry.
+
+                                    "description": "The SSD220Q delivers greater performance and reliability. This new Transcend SSD220Q SSD Featuring with QLC
                                 </p>
                             </div>
                         </div>
@@ -130,8 +130,7 @@ const LetestNews = () => {
                                     </Link>
                                 </h3>
                                 <p className="text-base text-body-color">
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry.
+                                    winMos 8GB 2666MHz RGB DDR4 Desktop RAM with a data transfer speed of 36,000 MB/s operating voltage of 1.2 for power
                                 </p>
                             </div>
                         </div>
@@ -181,8 +180,7 @@ const LetestNews = () => {
                                     </Link>
                                 </h3>
                                 <p className="text-base text-body-color">
-                                    Lorem Ipsum is simply dummy text of the printing and
-                                    typesetting industry.
+                                 RGB DDR4 Desktop RAM with a data transfer speed of 36,000 MB/s operating voltage of 1.2 for power 
                                 </p>
                             </div>
                         </div>

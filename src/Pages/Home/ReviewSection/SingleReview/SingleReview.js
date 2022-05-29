@@ -10,7 +10,7 @@ const SingleReview = ({review}) => {
                     <img className='w-full object-contain' src={photoURL} alt="" />
                 </div>
                 <h3 className="text-lg">Rating: {rating}</h3>
-                <p className='text-gray-500'>{comment}</p>
+                <p className='text-gray-500'>{comment.length > 70 ? comment.slice(0, 70) : comment}</p>
                 <div>
                     <h3 className="text-xl font-semibold">{displayName}</h3>
                 </div>
