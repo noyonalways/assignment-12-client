@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
 
     const { data: result, isLoading, refetch } = useQuery('allOrder', async () => {
         try {
-            return await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/order?email=${user.email}`)
+            return await axiosPrivate.get(`/order?email=${user.email}`)
         } catch (error) {
             console.log(error);
             if (error.response.status === 401 || error.response.status === 403) {

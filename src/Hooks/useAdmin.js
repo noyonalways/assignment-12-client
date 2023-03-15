@@ -9,7 +9,7 @@ const useAdmin = (user) => {
         const email = user?.email;
         (async () => {
             if (email) {
-                const { data } = await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/admin/${email}`);
+                const { data } = await axiosPrivate.get(`/admin/${email}`);
                 setAdmin(data.isAdmin)
                 setAdminLoading(false);
             }

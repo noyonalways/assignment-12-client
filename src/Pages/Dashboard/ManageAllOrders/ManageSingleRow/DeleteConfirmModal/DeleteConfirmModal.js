@@ -5,10 +5,10 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
     const { productName, _id, productId, productQuantity } = deleteOrder;
 
     const handleDelete = async () => {
-        const { data } = await axiosPrivate.delete(`https://glacial-temple-86041.herokuapp.com/order/${_id}`);
+        const { data } = await axiosPrivate.delete(`/order/${_id}`);
         console.log('delete method', data);
         setDeleteOrder(null);
-        const { data: product } = await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/product/${productId}`);
+        const { data: product } = await axiosPrivate.get(`/product/${productId}`);
         console.log("get method", product);
 
         const newQuantity = parseInt(product?.availableQuantity) + parseInt(productQuantity);
@@ -18,7 +18,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
             quantity: newQuantity,
             sold: newSoldQuantity
         }
-        const { data: result1 } = await axiosPrivate.put(`https://glacial-temple-86041.herokuapp.com/product/${productId}`, updatedProduct);
+        const { data: result1 } = await axiosPrivate.put(`/product/${productId}`, updatedProduct);
         console.log('put method', result1);
         refetch();
 

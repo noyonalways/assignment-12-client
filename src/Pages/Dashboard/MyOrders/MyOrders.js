@@ -20,7 +20,7 @@ const MyOrders = () => {
 
     const { data: result, isLoading, refetch } = useQuery('myOrders', async () => {
         try {
-            return await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/myOrder?email=${user.email}`);
+            return await axiosPrivate.get(`/myOrder?email=${user.email}`);
 
         } catch (error) {
             if (error.response.status === 401 || error.response.status === 403) {
@@ -55,7 +55,7 @@ const MyOrders = () => {
                                         <th>USer Info</th>
                                         <th>Order Status</th>
                                         <th></th>
-                                    </tr>
+                                    </tr>   
                                 </thead>
                                 <tbody>
                                     {

@@ -18,7 +18,7 @@ const AddReview = () => {
         }
 
 
-        const { data } = await axios.post(`https://glacial-temple-86041.herokuapp.com/review`, newReview);
+        const { data } = await axios.post(`/review`, newReview);
         console.log(data)
         reset();
     }

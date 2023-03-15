@@ -33,7 +33,7 @@ const AddProduct = () => {
             sold: 0,
         };
         
-        const {data: result, } = await axiosPrivate.post(`https://glacial-temple-86041.herokuapp.com/product`, newProduct);
+        const {data: result, } = await axiosPrivate.post(`/product`, newProduct);
         console.log(result);
         reset();
         setLoaging(false);

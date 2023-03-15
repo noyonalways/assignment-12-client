@@ -9,7 +9,7 @@ import { useQuery } from 'react-query';
 import NoData from '../../Components/NoData/NoData';
 
 const Blogs = () => {
-    const { data, isLoading } = useQuery('questions', async () => await axios.get('https://glacial-temple-86041.herokuapp.com/question'));
+    const { data, isLoading } = useQuery('questions', async () => await axios.get('/question'));
     const questions = data?.data?.data;
     return (
         <section >

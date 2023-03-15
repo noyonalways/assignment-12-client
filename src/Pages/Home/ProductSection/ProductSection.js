@@ -13,7 +13,7 @@ const ProductSection = () => {
     const navigate = useNavigate();
     const { data: result, isLoading } = useQuery('products', async () => {
         try {
-            return await axiosPrivate.get('https://glacial-temple-86041.herokuapp.com/product')
+            return await axiosPrivate.get('/product')
         } catch (error) {
             if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);

@@ -44,11 +44,13 @@ const Login = () => {
         }
     };
 
-    const resetPassword = async () => {
+    const resetPassword = async (e) => {
+        
         if (email.value === '') {
             setEmail({ value: '', error: 'Email is required' })
         }
         else if (email.value) {
+            
             await sendPasswordResetEmail(email.value);
             toast.success('Reset password email Sent', { id: 'restEmail' });
         }

@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L4QJ3ASQI9IbbxJDEgAGwwQc6h9bKggxgyRg
 
 const Payment = () => {
     const { id } = useParams();
-    const { data: result, isLoading } = useQuery(['mySingleOrder', id], async () => await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/myOrder/${id}`));
+    const { data: result, isLoading } = useQuery(['mySingleOrder', id], async () => await axiosPrivate.get(`/myOrder/${id}`));
     const product = result?.data;
 
     if (isLoading) {

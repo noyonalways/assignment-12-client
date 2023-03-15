@@ -2,10 +2,10 @@
 
 
 ## Tech-parts live website link
-### https://tech-parts.web.app/
+### https://tech-parts.web.app
 
 ## Tech-parts live server link
-### https://glacial-temple-86041.herokuapp.com/
+### https://techparts-server.onrender.com
 
 ## Admin Info
 
@@ -47,7 +47,7 @@ Password: Tech1234
 
 
 
-## USed Technologies (Backend)
+## Used Technologies (Backend)
 - Express
 - Cors
 - Mongodb

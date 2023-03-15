@@ -5,7 +5,7 @@ const ManageSingleRow = ({ order, index, setDeleteOrder, refetch }) => {
     const { productPrice, date, email, productName, productQuantity, totalCost, productImg, paid, transactionId, status, _id } = order;
 
     const handlePending = async () => {
-        await axiosPrivate.put(`https://glacial-temple-86041.herokuapp.com/status/${_id}`);
+        await axiosPrivate.put(`/status/${_id}`);
         refetch();
     }
 

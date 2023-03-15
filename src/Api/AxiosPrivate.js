@@ -1,6 +1,8 @@
 import axios from "axios";
 const axiosPrivate = axios.create({});
 
+axiosPrivate.defaults.baseURL= "https://techparts-server.onrender.com"
+axios.defaults.baseURL= "https://techparts-server.onrender.com"
 axiosPrivate.interceptors.request.use(function (config) {
     // Do something before request is sent
     if(!config.headers.authorization){

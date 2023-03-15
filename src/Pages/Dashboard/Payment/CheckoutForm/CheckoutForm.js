@@ -16,7 +16,7 @@ const CheckoutForm = ({ product }) => {
     useEffect(() => {
         (async () => {
 
-            const { data } = await axiosPrivate.post(`https://glacial-temple-86041.herokuapp.com/create-payment-intent`, { price });
+            const { data } = await axiosPrivate.post(`/create-payment-intent`, { price });
             setClientSecret(data?.clientSecret);
 
         })();
@@ -73,7 +73,7 @@ const CheckoutForm = ({ product }) => {
                 productId: _id,
                 status: 'pending'
             }
-            const { data } = await axiosPrivate.patch(`https://glacial-temple-86041.herokuapp.com/order/${_id}`, payment);
+            const { data } = await axiosPrivate.patch(`/order/${_id}`, payment);
             console.log(data);
 
 

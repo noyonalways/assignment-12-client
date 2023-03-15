@@ -5,7 +5,7 @@ const ManageModal = ({deleteProduct, refetch, setDeleteProduct}) => {
 
     const {  name, _id} = deleteProduct;
     const handleDelete = async () => {
-        await axiosPrivate.delete(`https://glacial-temple-86041.herokuapp.com/product/${_id}`);
+        await axiosPrivate.delete(`/product/${_id}`);
         refetch();
         setDeleteProduct(null);
     }

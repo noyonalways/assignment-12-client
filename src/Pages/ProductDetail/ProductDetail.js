@@ -11,7 +11,7 @@ import axiosPrivate from '../../Api/AxiosPrivate';
 const ProductDetail = () => {
     const [user] = useAuthState(auth);
     const { id } = useParams();
-    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axiosPrivate.get(`https://glacial-temple-86041.herokuapp.com/product/${id}`));
+    const { data, isLoading, refetch } = useQuery(['singleProduct', id], async () => await axiosPrivate.get(`/product/${id}`));
     const product = data?.data;
 
     const [address, setAddress] = useState({value: '', error: ''});
@@ -79,7 +79,7 @@ const ProductDetail = () => {
                 quantity: newQuantity,
                 sold: newSoldQuantity
             }
-            const {data: result} = await axiosPrivate.put(`https://glacial-temple-86041.herokuapp.com/product/${id}`, updatedProduct);
+            const {data: result} = await axiosPrivate.put(`/product/${id}`, updatedProduct);
             console.log(result);
             refetch();
 
@@ -97,7 +97,7 @@ const ProductDetail = () => {
                 totalCost: parseInt((wantQuantity.value * parseInt(product?.price)).toFixed(2)),
                 date: formatedDate
             }
-            const {data} = await axiosPrivate.post('https://glacial-temple-86041.herokuapp.com/order', orderProduct);
+            const {data} = await axiosPrivate.post('/order', orderProduct);
             console.log(data.result);
             if(data.success){
                 toast.success('Order placed successfully', {toastId: 'order'})

@@ -15,7 +15,7 @@ const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
     const { data: result, isLoading, refetch } = useQuery('products', async () => {
         try {
-            return await axiosPrivate.get('https://glacial-temple-86041.herokuapp.com/product')
+            return await axiosPrivate.get('/product')
         } catch (error) {
             if (error.response.status === 401 || error.response.status === 403) {
                 signOut(auth);
